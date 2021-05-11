@@ -6,6 +6,10 @@ data:
       repos:
       - data-platform-skn/jx-minikube-test
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - data-platform-skn/jx-golang-test
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,9 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      data-platform-skn/jx-golang-test:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
       data-platform-skn/jx-minikube-test:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -24,6 +31,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      data-platform-skn/jx-golang-test:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       data-platform-skn/jx-minikube-test:
       - config-updater
       - approve
@@ -53,6 +76,11 @@ data:
     - repos:
       - data-platform-skn/jx-minikube-test
       trusted_org: todo
+    - repos:
+      - data-platform-skn/jx-golang-test
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
