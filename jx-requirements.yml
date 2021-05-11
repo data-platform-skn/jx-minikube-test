@@ -14,8 +14,11 @@ spec:
     gitName: github
     gitServer: https://github.com
     provider: minikube
+    registry: 10.104.0.27
   environments:
   - key: dev
+    owner: data-platform-skn
+    repository: jx-minikube-test
   - key: staging
   - key: production
   ingress:
@@ -27,6 +30,8 @@ spec:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: jx-minikube-test
   repository: bucketrepo
   secretStorage: local
   vault: {}
