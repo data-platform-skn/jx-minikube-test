@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: jx-golang-test
+    - name: jx3-golang-demo
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
